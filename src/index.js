@@ -24,7 +24,9 @@ class Ichimoku {
             let lows = [];
             let closes = [];
             let spanAs = [];
+            let spanAsNoDis = [];
             let spanBs = [];
+            let spanBsNoDis = [];
 
             let conversionPeriodLow, conversionPeriodHigh;
             let basePeriodLow, basePeriodHigh;
@@ -57,21 +59,28 @@ class Ichimoku {
 
                     // Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))
                     let spanA = 0;
+                    let spanANoDis = 0;
                     spanAs.push((conversionLine + baseLine) /2);
+                    spanAsNoDis.push((conversionLine + baseLine) /2);
 
                     // Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))
                     let spanB = 0;
+                    let spanBNoDis = 0;
                     spanbPeriodLow = lows.slice(-_this.params.spanPeriod).reduce( (a,b) => Math.min(a,b) );
                     spanbPeriodHigh = highs.slice(-_this.params.spanPeriod).reduce( (a,b) => Math.max(a,b) );
                     spanBs.push((spanbPeriodHigh + spanbPeriodLow) /2);
+                    spanBsNoDis.push((spanbPeriodHigh + spanbPeriodLow) /2);
 
                     // Senkou Span A / Senkou Span B offset by 26 periods
                     if(spanCounter < _this.params.displacement) {
                         spanCounter++
                     } else {
                         spanA = spanAs.shift();
-                        spanB = spanBs.shift()
+                        spanB = spanBs.shift();
+
                     }
+                    spanBNoDis = spanBsNoDis.shift();
+                    spanANoDis = spanAsNoDis.shift();
 
                     // Chikou Span (Lagging Span): Close plotted 26 days in the past
                     let close = 0;
@@ -87,6 +96,8 @@ class Ichimoku {
                         base       : parseFloat(baseLine.toFixed(8)),
                         spanA      : parseFloat(spanA.toFixed(8)),
                         spanB      : parseFloat(spanB.toFixed(8)),
+                        spanBNoDis : parseFloat(spanBNoDis.toFixed(8)),
+                        spanANoDis : parseFloat(spanANoDis.toFixed(8)),
                         lagging	   : parseFloat(close.toFixed(8))
                     }
 
