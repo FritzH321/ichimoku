@@ -47,74 +47,95 @@ describe('Ichimoku', () => {
 
     it('should calculate the correct line values', () => {
         expect(ichimokuValues).to.deep.equal([{
-            conversion: 1.3393,
-            base: 1.336665,
-            spanA: 1.3375975,
-            spanB: 1.337445,
-            lagging: 1.3333
-        },
-            {
-                conversion: 1.33921,
+                conversion: 1.3393,
                 base: 1.336665,
-                spanA: 1.33748,
+                spanA: 1.3375975,
                 spanB: 1.337445,
-                lagging: 1.33332
+                spanBNoDis: 1.33747,
+                spanANoDis: 1.3379825,
+                lagging: 1.34332
             },
-            {
-                conversion: 1.33899,
-                base: 1.336665,
-                spanA: 1.337525,
-                spanB: 1.337445,
-                lagging: 1.33352
-            },
-            {
-                conversion: 1.33899,
-                base: 1.336665,
-                spanA: 1.3375875,
-                spanB: 1.33736,
-                lagging: 1.33326
-            },
-            {
-                conversion: 1.339,
-                base: 1.336675,
-                spanA: 1.3378325,
-                spanB: 1.33736,
-                lagging: 1.3341
-            },
-            {
-                conversion: 1.33956,
-                base: 1.337235,
-                spanA: 1.33791,
-                spanB: 1.33736,
-                lagging: 1.33465
-            },
-            {
-                conversion: 1.33956,
-                base: 1.337235,
-                spanA: 1.33791,
-                spanB: 1.33736,
-                lagging: 1.33501
-            },
-            {
-                conversion: 1.33956,
-                base: 1.337235,
-                spanA: 1.337715,
-                spanB: 1.33736,
-                lagging: 1.33518
-            },
-            {
-                conversion: 1.33982,
-                base: 1.337495,
-                spanA: 1.337715,
-                spanB: 1.33716,
-                lagging: 1.33504
-            },
-            {
-                conversion: 1.33982,
-                base: 1.337495,
-                spanA: 1.33811,
-                spanB: 1.33709,
-                lagging: 1.33506
-            }])
+                {
+                    conversion: 1.33921,
+                    base: 1.336665,
+                    spanA: 1.33748,
+                    spanB: 1.337445,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3379375,
+                    lagging: 1.34354
+                },
+                {
+                    conversion: 1.33899,
+                    base: 1.336665,
+                    spanA: 1.337525,
+                    spanB: 1.337445,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3378275,
+                    lagging: 1.34397
+                },
+                {
+                    conversion: 1.33899,
+                    base: 1.336665,
+                    spanA: 1.3375875,
+                    spanB: 1.33736,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3378275,
+                    lagging: 1.34354
+                },
+                {
+                    conversion: 1.339,
+                    base: 1.336675,
+                    spanA: 1.3378325,
+                    spanB: 1.33736,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3378375,
+                    lagging: 1.34336
+                },
+                {
+                    conversion: 1.33956,
+                    base: 1.337235,
+                    spanA: 1.33791,
+                    spanB: 1.33736,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3383975,
+                    lagging: 1.3438
+                },
+                {
+                    conversion: 1.33956,
+                    base: 1.337235,
+                    spanA: 1.33791,
+                    spanB: 1.33736,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3383975,
+                    lagging: 1.34406
+                },
+                {
+                    conversion: 1.33956,
+                    base: 1.337235,
+                    spanA: 1.337715,
+                    spanB: 1.33736,
+                    spanBNoDis: 1.33747,
+                    spanANoDis: 1.3383975,
+                    lagging: 1.34392
+                },
+                {
+                    conversion: 1.33982,
+                    base: 1.337495,
+                    spanA: 1.337715,
+                    spanB: 1.33716,
+                    spanBNoDis: 1.337495,
+                    spanANoDis: 1.3386575,
+                    lagging: 1.34366
+                },
+                {
+                    conversion: 1.33982,
+                    base: 1.337495,
+                    spanA: 1.33811,
+                    spanB: 1.33709,
+                    spanBNoDis: 1.337495,
+                    spanANoDis: 1.3386575,
+                    lagging: 1.34349
+                }]
+        )
     })
 });
