@@ -84,7 +84,7 @@ class Ichimoku {
 
                     // Chikou Span (Lagging Span): Close plotted 26 days in the past
                     let close = 0;
-                    if(lagCounter > _this.params.displacement) {
+                    if(lagCounter < _this.params.displacement) {
                         lagCounter++
                     } else {
                         close = parseFloat(closes.shift())
